@@ -67,7 +67,9 @@ public abstract class Hero {
     public short attack() {
         return 0;
     }
-    public void takeDamage(short attack) {}
+    public void takeDamage(short attack) {
+        this.setHp((short) (getHp()-attack));
+    }
 
 
     @Override
