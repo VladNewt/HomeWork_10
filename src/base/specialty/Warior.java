@@ -2,6 +2,7 @@ package base.specialty;
 
 import base.Hero;
 import base.Sword;
+import base.types.Zombie;
 
 public abstract class Warior extends Hero {
     private short armor;
@@ -45,6 +46,17 @@ public abstract class Warior extends Hero {
                 this.setHp((short) (this.getHp()+this.getArmor()-attack));
         }
     }
+    
+    public void takeDemage(Zombie zombie) {
+        if(this.getArmor()+this.getHp() > Undead.BASE_ATTACK) {
+            takeDamage(Undead.BASE_ATTACK);
+        } else {
+            this.setAlive(false);
+            new Zombie(this.getName());
+        }
+    }
+    
+    
 
     public void intoxication(int source) {
         //1-зелье оцепенения;

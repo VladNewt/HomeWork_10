@@ -7,14 +7,14 @@ public abstract class Undead extends Hero {
     protected static final short START_HP = 100;
     protected static final short START_ATTACK_FORCE = 300;
     protected static final short MAX_INFECTED = 250;
+    protected static final short BASE_ATTACK = 50;
 
 
-    public Undead() {
-        super(START_HP, START_ATTACK_FORCE);
-    }
+
 
     public Undead(String name) {
-        this();
+        super(START_HP, START_ATTACK_FORCE);
+        this.setInfected(MAX_INFECTED);
         this.setName(name);
     }
 
@@ -30,6 +30,10 @@ public abstract class Undead extends Hero {
 
     private short infected;
 
+
+    public Undead attackUndead(){
+        return null;
+    }
 
 
 
