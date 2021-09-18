@@ -46,14 +46,10 @@ public abstract class Warior extends Hero {
                 this.setHp((short) (this.getHp()+this.getArmor()-attack));
         }
     }
-    
-    public void takeDemage(Zombie zombie) {
-        if(this.getArmor()+this.getHp() > Undead.BASE_ATTACK) {
-            takeDamage(Undead.BASE_ATTACK);
-        } else {
-            this.setAlive(false);
-            new Zombie(this.getName());
-        }
+
+    //если атакующая сторона нежить, то броня не помогает, уменьшается здоровье
+    public void takeUndeadDemage(Short attack) {
+        this.setHp((short) (getHp()-attack));
     }
     
     

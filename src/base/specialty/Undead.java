@@ -12,10 +12,11 @@ public abstract class Undead extends Hero {
 
 
 
-    public Undead(String name) {
+
+
+    public Undead() {
         super(START_HP, START_ATTACK_FORCE);
         this.setInfected(MAX_INFECTED);
-        this.setName(name);
     }
 
 
