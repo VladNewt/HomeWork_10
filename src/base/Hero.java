@@ -1,8 +1,10 @@
 package base;
 
+import java.util.Objects;
 import java.util.Random;
 
 public abstract class Hero {
+
     private String name;
     private short hp;
     private short attackForce;
@@ -80,5 +82,18 @@ public abstract class Hero {
                 ", attackForce=" + attackForce +
                 ", alive=" + alive +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hero hero = (Hero) o;
+        return hp == hero.hp && attackForce == hero.attackForce && alive == hero.alive && Objects.equals(name, hero.name) && Objects.equals(rnd, hero.rnd);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, hp, attackForce, alive, rnd);
     }
 }

@@ -10,40 +10,22 @@ public class Main {
         Potioner vadik = new Potioner("Vadik");
         Necromant nickita = new Necromant("Nickita");
 
-            while (vadik.getAlive() && nickita.getAlive()) {
-//                System.out.println(vadik.getName()+vadik.toString()+" Armor = "+vadik.getArmor());
-                System.out.println(nickita.getName()+nickita.toString());
-                nickita.attack(vadik);
-                nickita.takeDamage(vadik.attack());
 
-                if (nickita.getAttackForce()==0 && vadik.getAttackForce()==0){
-                    System.out.println("Frendship is win!!!");
-                    break;
-                }
+
+    }
+
+    //Битва по умолчанию
+    public void fight(Hero hero1, Hero hero2) {
+        while (hero1.getAlive() && hero2.getAlive()) {
+            System.out.println(hero1.getName()+hero1.toString());
+            System.out.println(hero2.getName()+hero2.toString());
+            hero1.takeDamage(hero2.attack());
+            hero2.takeDamage(hero1.attack());
+
+            if (hero1.getAttackForce()==0 && hero2.getAttackForce()==0){
+                System.out.println("Frendship is win!!!");
+                break;
             }
-
-//            if (vadik.getAlive() && !nickita.getAlive()) {
-//                vadikWin++;
-//            } else if (nickita.getAlive() && !vadik.getAlive()) {
-//                nickitaWin++;
-//            }
-//
-//            vadik.setAlive(true);
-//            vadik.setAttackForce(Warior.START_ATTACK_FORCE);
-//            vadik.setArmor(Warior.START_ARMOR);
-//            vadik.setHp(Warior.START_HP);
-//
-//            nickita.setAlive(true);
-//            nickita.setAttackForce(Warior.START_ATTACK_FORCE);
-//            nickita.setArmor(Warior.START_ARMOR);
-//            nickita.setHp(Warior.START_HP);
-
-
-
-
-
-
-
-
+        }
     }
 }
