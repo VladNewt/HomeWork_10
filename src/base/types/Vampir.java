@@ -5,7 +5,7 @@ import base.specialty.Undead;
 import base.specialty.Warior;
 
 
-//Класс описания вампира - при атаке вампира теряется сила атакуемого (или мана) и здоровье
+//Класс описания вампира - при атаке вампира теряется сила атакуемого(attackForce) или мана и здоровье
 public class Vampir extends Undead {
 
     private final short BASE_LOW_FORCE = 42;
@@ -30,4 +30,6 @@ public class Vampir extends Undead {
         magie.setMana((short) (magie.getMana()-BASE_LOW_MANA));
         return BASE_ATTACK;
     }
+
+
 }

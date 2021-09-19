@@ -2,6 +2,8 @@ package base.specialty;
 
 import base.Hero;
 
+//Класс описания нежити в командной игре планируется реализовать "превращение" воина в соответствующий тип нежити
+//если тот его убивает
 public abstract class Undead extends Hero {
 
     protected static final short START_HP = 100;
@@ -11,14 +13,10 @@ public abstract class Undead extends Hero {
 
 
 
-
-
-
     public Undead() {
         super(START_HP, START_ATTACK_FORCE);
         this.setInfected(MAX_INFECTED);
     }
-
 
 
     public short getInfected() {
@@ -35,10 +33,5 @@ public abstract class Undead extends Hero {
     public Undead attackUndead(){
         return null;
     }
-
-
-
-
-
 
 }

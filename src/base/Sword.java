@@ -1,5 +1,7 @@
 package base;
 
+import java.util.Random;
+
 public class Sword {
     public static final short longSword = 1;
     public static final short shortSword = 2;
@@ -7,10 +9,6 @@ public class Sword {
     private String name;            //тип меча длинный/короткий (long/short)
     private short deltaAttac;
     private short deltaDemage;
-
-    public Sword() {
-
-    }
 
     public Sword(short type) {
         setSword(type);
@@ -39,5 +37,10 @@ public class Sword {
 
     public short getDeltaDemage() {
         return deltaDemage;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

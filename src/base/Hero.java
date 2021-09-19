@@ -9,7 +9,7 @@ public abstract class Hero {
     private short hp;
     private short attackForce;
     private boolean alive;
-
+//
     public Random rnd = new Random();
 
     {
@@ -69,19 +69,18 @@ public abstract class Hero {
     public short attack() {
         return 0;
     }
+
     public void takeDamage(short attack) {
-        this.setHp((short) (getHp()-attack));
+        this.setHp((short) (this.getHp()-attack));
     }
 
 
     @Override
     public String toString() {
-        return "Hero{" +
-                "name='" + name + '\'' +
+        return " name='" + name + '\'' +
                 ", hp=" + hp +
                 ", attackForce=" + attackForce +
-                ", alive=" + alive +
-                '}';
+                ", alive="+ alive+"}";
     }
 
     @Override

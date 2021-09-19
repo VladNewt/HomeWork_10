@@ -30,11 +30,21 @@ public abstract class Magie extends Hero {
 
     }
 
+    public void attack(Warior warior) {
+
+    }
+
     public void takeDamage(short attack) {
         if (mana>=10 && this.getHp()<10) {
             this.setHp((short) 10);
         } else {
             this.setHp((short) (getHp() - attack));
         }
+    }
+
+
+    @Override
+    public String toString() {
+        return " mana=" + mana + super.toString();
     }
 }

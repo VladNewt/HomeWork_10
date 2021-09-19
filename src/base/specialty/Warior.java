@@ -4,6 +4,8 @@ import base.Hero;
 import base.Sword;
 import base.types.Zombie;
 
+import java.util.Objects;
+
 public abstract class Warior extends Hero {
     private short armor;
     private boolean paralysys = false;     //При атаках магов или нежити, воин может быть заражен и стать зомби, вампиром или оборотнем
@@ -12,10 +14,10 @@ public abstract class Warior extends Hero {
     public static final short START_ATTACK_FORCE = 150;
     public static final short START_ARMOR = 100;
 
-    public Warior(short hp, short attackForce) {
-        super(hp, attackForce);
+    public Warior() {
+        super(START_HP, START_ATTACK_FORCE);
+        this.setArmor(START_ARMOR);
     }
-
 
     public void setArmor(short armor) {
         if(armor<0) {
@@ -39,6 +41,7 @@ public abstract class Warior extends Hero {
         this.paralysys = paralysys;
     }
 
+    //Получение урона по умолчанию
     public void takeDamage(short attack) {
         if (getArmor()>attack) {
             this.setArmor((short) (this.getArmor()-attack));
@@ -67,4 +70,22 @@ public abstract class Warior extends Hero {
         }
     }
 
+    @Override
+    public String toString() {
+        return " armor=" + armor + super.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Warior warior = (Warior) o;
+        return armor == warior.armor && paralysys == warior.paralysys;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), armor, paralysys);
+    }
 }
